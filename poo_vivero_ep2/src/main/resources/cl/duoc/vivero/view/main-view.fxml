@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cl.duoc.vivero.controller.MainController">
+   <children>
+      <HBox prefHeight="101.0" prefWidth="752.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="116.0" prefWidth="329.0" text="Clínica Veterinaria PataVerde" textFill="#05ae13">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="48.0" prefWidth="377.0" text="Alerta" textAlignment="CENTER" textFill="RED" textOverrun="WORD_ELLIPSIS" underline="true" visible="false">
+               <font>
+                  <Font name="Arial Narrow" size="12.0" />
+               </font>
+            </Label>
+         </children></HBox>
+      <VBox layoutX="7.0" layoutY="114.0" prefHeight="386.0" prefWidth="224.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="227.0" text="Tipo de mascota" />
+            <ChoiceBox prefWidth="150.0" />
+            <Label layoutX="10.0" layoutY="20.0" prefHeight="17.0" prefWidth="227.0" text="Nombre" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="326.0" layoutY="114.0" prefHeight="386.0" prefWidth="426.0" />
+   </children>
+</AnchorPane>
