@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cl.duoc</groupId>
-    <artifactId>vivero</artifactId>
+    <artifactId>clinica</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
     <name>Vivero</name>
@@ -47,7 +47,10 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>cl.duoc.vivero.Launcher</mainClass>
+                    <mainClass>cl.duoc.clinica.Launcher</mainClass>
+                    <options>
+                        <option>--enable-native-access=ALL-UNNAMED</option>
+                    </options>
                 </configuration>
             </plugin>
         </plugins>
