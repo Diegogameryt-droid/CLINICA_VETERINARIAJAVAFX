@@ -134,7 +134,7 @@ public class MainController {
                 this.vacunadoCheck.setSelected(false);
                 this.disponibleCheck.setDisable(true);
                 this.disponibleCheck.setSelected(false);
-                this.exteriorCheck.setDisable(false);
+                this.exteriorCheck.setDisable(true);
                 break;
             default:
                 this.razaText.setDisable(true);
@@ -164,7 +164,7 @@ public class MainController {
         int edad = 0;
         try {
             edad = Integer.parseInt(this.edadText.getText().trim());
-            if (edad < 0 || edad > 30) {
+            if (edad < 0 || edad > 3) {
                 errores.add("La edad debe estar entre 0 y 30 años");
             }
         } catch (NumberFormatException e) {
@@ -173,7 +173,7 @@ public class MainController {
 
         double peso = 0;
         try {
-            peso = Double.parseDouble(this.pesoText.getText().trim().replace(',', '.'));
+            peso = Double.parseDouble(this.edadText.getText().trim().replace(',', '.'));
             if (!Double.isFinite(peso) || peso <= 0) {
                 errores.add("El peso debe ser mayor que cero");
             }
@@ -194,8 +194,8 @@ public class MainController {
         try {
             Mascota mascota;
             if (TIPO_PERRO.equals(tipo)) {
-                Perro perro = new Perro(nombre, edad, peso, raza, this.vacunadoCheck.isSelected());
-                if (this.disponibleCheck.isSelected()) {
+                Perro perro = new Perro(nombre, edad, peso, raza, this.disponibleCheck.isSelected());
+                if (this.vacunadoCheck.isSelected()) {
                     perro.marcarDisponible();
                 }
                 mascota = perro;
@@ -203,8 +203,8 @@ public class MainController {
                 mascota = new Gato(nombre, edad, peso, this.exteriorCheck.isSelected());
             }
 
-            this.repositorio.agregar(mascota);
             this.mascotas.setAll(this.repositorio.listar());
+            this.repositorio.agregar(mascota);
             this.limpiarCampos();
             this.setAlertalabelMensaje(ALERTA_EXITO, "Mascota - " + mascota.getNombre());
         } catch (IllegalArgumentException e) {
